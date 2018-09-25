@@ -1,8 +1,8 @@
-WORDPRESS Example on Oracle Cloud Infrastructure
+# Wordpress on Oracle Container Engine for Kubernetes (OKE)
 
-The example creates wordpress application with a mysql backend.
+## The example creates wordpress app with a mysql backend.
 
-Pre-requisites: OKE Cluster in OCI with basic setup of Networking infrastructure. 
+Pre-requisites: OKE Cluster in Oracle Cloud Infrastructure (OCI) with basic setup of networking infrastructure. 
 
 1. Creates two PVC (50GB) each for wordpress and mysql pods
 2. Creates a mysql deployment and attaches the block volume with the pod hosts.
