@@ -1,11 +1,3 @@
-/*
- * This example demonstrates round robin load balancing behavior by creating two instances, a configured
- * vcn and a load balancer. The public IP of the load balancer is outputted after a successful run, curl
- * this address to see the hostname change as different instances handle the request.
- *
- * NOTE: The https listener is included for completeness but should not be expected to work,
- * it uses dummy certs.
- */
 
 ### Authentication details
 ### export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
