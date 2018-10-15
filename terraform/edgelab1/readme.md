@@ -6,3 +6,6 @@ It creates
 - Users, Groups and associates the users to groups 
 - Creates polices to allow users to manage **dns** in their own compartments
 - Two webservers in Ashburn and Frankfurt region 
+
+
+It uses the latest 3.0 OCI terraform provider. 
