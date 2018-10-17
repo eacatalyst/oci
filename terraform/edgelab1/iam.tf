@@ -45,7 +45,8 @@ resource "oci_identity_policy" "policies" {
   description    = "${format("Policy For dgelabUserUser%1d", count.index)}"
   compartment_id = "${var.tenancy_ocid}"
   #statements     = ["${format("Allow group EdgeLabGroup-%1d", count.index)} to manage dns in compartment ${format("EdgeLab-%1d", count.index)}"]
-   statements     = ["${format("Allow group EdgeLabGroup-%1d", count.index)} to manage all-resources in compartment EdgeLab-0"]
+  statements     = ["${format("Allow group EdgeLabGroup-%1d", count.index)} to manage dns in compartment EdgeLab-0"]
+  statements     = ["${format("Allow group EdgeLabGroup-%1d", count.index)} to manage health-check-family in compartment EdgeLab-0"]
 }
 
 ###### Display Temp Passwords for each User ########
