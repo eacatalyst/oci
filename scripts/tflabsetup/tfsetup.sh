@@ -9,7 +9,7 @@ read -p "Press enter to continue"
 #sudo yum -y upgrade
 #sudo yum -y update
 
-sudo yum -y install terraform terraform-provider-oci python-oci-cli bzip2 cpio zip unzip dos2unix dialog curl jq git golang iputils wget screen tmux byobu elinks
+sudo yum -y install terraform python-oci-cli bzip2 cpio zip unzip dos2unix dialog curl jq git golang iputils wget screen tmux byobu elinks
 
 yes "y" | ssh-keygen -N "" -f ~/.ssh/id_rsa
 
