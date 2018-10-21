@@ -60,8 +60,6 @@ export TF_VAR_tenancy_ocid=<tenancy_OCID>
 export TF_VAR_user_ocid=<api.user_OCID>
 export TF_VAR_compartment_ocid=<Demo_Compartment_OCID>
 
-#export TF_VAR_fingerprint=$(openssl rsa -in ~/.oci/oci_api_key.pem -pubout -outform DER 2>/dev/null | openssl md5 -c | awk '{print $2}')
-#"openssl rsa -in ~/.oci/oci_api_key.pem -pubout -outform DER 2>/dev/null | openssl md5 -c | awk '{print $2}' > ~/.oci/oci_api_key_fingerprint"
 export TF_VAR_fingerprint=$(cat ~/.oci/oci_api_key_fingerprint)
 
 export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
