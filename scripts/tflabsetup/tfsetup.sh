@@ -26,9 +26,9 @@ openssl rsa -in ~/.oci/oci_api_key.pem -pubout -outform DER 2>/dev/null | openss
 chmod 0600 ~/.oci/oci_api_key_public.pem
 chmod 0600 ~/.oci/oci_api_key_fingerprint
 
-mkdir -p tftest
+mkdir -p terraformtest
 
-command cat >~/tftest/tftest.tf <<'EOF'
+command cat >~/terraformtest/provider.tf <<'EOF'
 variable "tenancy_ocid" {}
 variable "user_ocid" {}
 variable "fingerprint" {}
@@ -55,13 +55,11 @@ output "ADprint" {
 }
 EOF
 
-command cat>~/tftest/env-vars <<'EOF'
-export TF_VAR_tenancy_ocid=ocid1.tenancy.oc1..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-export TF_VAR_user_ocid=ocid1.user.oc1..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-export TF_VAR_compartment_ocid=ocid1.compartment.oc1..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+command cat>~/terraformtest/env-vars <<'EOF'
+export TF_VAR_tenancy_ocid=<tenancy_OCID>
+export TF_VAR_user_ocid=<api.user_OCID>
+export TF_VAR_compartment_ocid=<Demo_Compartment_OCID>
 
-#export TF_VAR_fingerprint=$(openssl rsa -in ~/.oci/oci_api_key.pem -pubout -outform DER 2>/dev/null | openssl md5 -c | awk '{print $2}')
-#"openssl rsa -in ~/.oci/oci_api_key.pem -pubout -outform DER 2>/dev/null | openssl md5 -c | awk '{print $2}' > ~/.oci/oci_api_key_fingerprint"
 export TF_VAR_fingerprint=$(cat ~/.oci/oci_api_key_fingerprint)
 
 export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
@@ -69,6 +67,22 @@ export TF_VAR_private_key_path=~/.oci/oci_api_key.pem
 export TF_VAR_ssh_public_key=$(cat ~/.ssh/id_rsa.pub)
 export TF_VAR_ssh_private_key=$(cat ~/.ssh/id_rsa)
 
-export TF_VAR_region=us-phoenix-1
+export TF_VAR_region=us-ashburn-1
 EOF
 
+
+echo 
+echo Terraform and OCI CLI have been installed. 
+echo The API Keys have been generated, and are saved at ~/.oci/ 
+echo
+echo Contents of the API Public Key
+echo
+cat ~/.oci/oci_api_key_public.pem 
+echo
+echo
+echo Contents of the API Key Fingerprint. 
+echo
+cat ~/.oci/oci_api_key_fingerprint
+echo
+echo
+echo
