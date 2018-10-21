@@ -75,5 +75,16 @@ EOF
 
 echo 
 echo Terraform and OCI CLI have been installed. 
-echo The API Keys have been generated, and are saved at ~/.oci/
-echo A terraformtest folder is created, with a single terraform .tf file along with an environments file. 
+echo The API Keys have been generated, and are saved at ~/.oci/ 
+echo
+echo Contents of the API Public Key
+echo
+cat ~/.oci/oci_api_key_public.pem 
+echo
+echo
+echo Contents of the API Key Fingerprint. 
+echo
+cat ~/.oci/oci_api_key_fingerprint
+echo
+echo
+echo
