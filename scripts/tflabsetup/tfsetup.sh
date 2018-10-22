@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-echo This script will install terraform and oci-cli on oracle linux.
+echo This script will install terraform, oci-cli and kubectl on oracle linux.
 echo WARNING - THIS SCRIPT WILL OVERWRITE ~/.ssh/id_rsa and ~/.ssh/id_rsa.pub
 echo
 read -p "Press enter to continue"
@@ -9,7 +9,7 @@ read -p "Press enter to continue"
 #sudo yum -y upgrade
 #sudo yum -y update
 
-sudo yum -y install terraform python-oci-cli bzip2 cpio zip unzip dos2unix dialog curl jq git golang iputils wget screen tmux byobu elinks
+sudo yum -y install terraform python-oci-cli bzip2 cpio zip unzip dos2unix dialog curl jq git golang iputils wget screen tmux byobu elinks kubectl
 
 yes "y" | ssh-keygen -N "" -f ~/.ssh/id_rsa
 
