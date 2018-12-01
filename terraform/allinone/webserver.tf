@@ -46,7 +46,7 @@ variable "subnet_cidr_w2" {
 }
 
 variable "instance_shape" {
-  default = "VM.Standard1.2"
+  default = "VM.Standard2.1"
 }
 
 
