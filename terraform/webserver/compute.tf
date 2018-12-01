@@ -9,7 +9,6 @@ resource "oci_core_instance" "Webserver-AD1" {
     subnet_id        = "${oci_core_subnet.subnet1.id}"
     display_name     = "primaryvnic"
     assign_public_ip = true
-    hostname_label   = "Webserver-AD1"
   }
 
   source_details {
@@ -38,12 +37,11 @@ resource "oci_core_instance" "Webserver-AD2" {
     subnet_id        = "${oci_core_subnet.subnet2.id}"
     display_name     = "primaryvnic"
     assign_public_ip = true
-    hostname_label   = "Webserver-AD2"
   }
 
   source_details {
     source_type = "image"
-    source_id   = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaabfxzgyg2gbwxgkfeir3xfqtkdey3g6k6cmri7wuost35vnrmo4zq"
+    source_id   = "ocid1.image.oc1.iad.aaaaaaaaiu73xa6afjzskjwvt3j5shpmboxtlo7yw4xpeqpdz5czpde7px2a"
   }
 
   metadata {
